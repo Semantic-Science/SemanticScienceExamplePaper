@@ -1,4 +1,5 @@
-# SemanticScienceExamplePaper
+# Semantic Science Example Paper
+GitHub repo for the paper *Semantic Science: Publication Beyond the PDF*, presented at IEEE SoutheastCon 2024.
 
 # Contents
 * /media contains an image
