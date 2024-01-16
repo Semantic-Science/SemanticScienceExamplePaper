@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Semantic Science: Publication Beyond the PDF - An Example Scientific Article Written in Markdown</title>
+  <style>
+    html {
+      font-size: 100%;
+      overflow-y: scroll;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+    }
+    
+    body {
+      color: #444;
+      font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+      font-size: 12px;
+      line-height: 1.7;
+      padding: 1em;
+      margin: auto;
+      max-width: 42em;
+      background: #fefefe;
+    }
+    
+    a {
+      color: #0645ad;
+      text-decoration: none;
+    }
+    
+    a:visited {
+      color: #0b0080;
+    }
+    
+    a:hover {
+      color: #06e;
+    }
+    
+    a:active {
+      color: #faa700;
+    }
+    
+    a:focus {
+      outline: thin dotted;
+    }
+    
+    *::-moz-selection {
+      background: rgba(255, 255, 0, 0.3);
+      color: #000;
+    }
+    
+    *::selection {
+      background: rgba(255, 255, 0, 0.3);
+      color: #000;
+    }
+    
+    a::-moz-selection {
+      background: rgba(255, 255, 0, 0.3);
+      color: #0645ad;
+    }
+    
+    a::selection {
+      background: rgba(255, 255, 0, 0.3);
+      color: #0645ad;
+    }
+    
+    p {
+      margin: 1em 0;
+    }
+    
+    img {
+      max-width: 100%;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+      color: #111;
+      line-height: 125%;
+      margin-top: 2em;
+      font-weight: normal;
+    }
+    
+    h4, h5, h6 {
+      font-weight: bold;
+    }
+    
+    h1 {
+      font-size: 2.5em;
+    }
+    
+    h2 {
+      font-size: 2em;
+    }
+    
+    h3 {
+      font-size: 1.5em;
+    }
+    
+    h4 {
+      font-size: 1.2em;
+    }
+    
+    h5 {
+      font-size: 1em;
+    }
+    
+    h6 {
+      font-size: 0.9em;
+    }
+    
+    blockquote {
+      color: #666666;
+      margin: 0;
+      padding-left: 3em;
+      border-left: 0.5em #EEE solid;
+    }
+    
+    hr {
+      display: block;
+      height: 2px;
+      border: 0;
+      border-top: 1px solid #aaa;
+      border-bottom: 1px solid #eee;
+      margin: 1em 0;
+      padding: 0;
+    }
+    
+    pre, code, kbd, samp {
+      color: #000;
+      font-family: monospace, monospace;
+      _font-family: 'courier new', monospace;
+      font-size: 0.98em;
+    }
+    
+    pre {
+      white-space: pre;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+    
+    b, strong {
+      font-weight: bold;
+    }
+    
+    dfn {
+      font-style: italic;
+    }
+    
+    ins {
+      background: #ff9;
+      color: #000;
+      text-decoration: none;
+    }
+    
+    mark {
+      background: #ff0;
+      color: #000;
+      font-style: italic;
+      font-weight: bold;
+    }
+    
+    sub, sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative;
+      vertical-align: baseline;
+    }
+    
+    sup {
+      top: -0.5em;
+    }
+    
+    sub {
+      bottom: -0.25em;
+    }
+    
+    ul, ol {
+      margin: 1em 0;
+      padding: 0 0 0 2em;
+    }
+    
+    li p:last-child {
+      margin-bottom: 0;
+    }
+    
+    ul ul, ol ol {
+      margin: .3em 0;
+    }
+    
+    dl {
+      margin-bottom: 1em;
+    }
+    
+    dt {
+      font-weight: bold;
+      margin-bottom: .8em;
+    }
+    
+    dd {
+      margin: 0 0 .8em 2em;
+    }
+    
+    dd:last-child {
+      margin-bottom: 0;
+    }
+    
+    img {
+      border: 0;
+      -ms-interpolation-mode: bicubic;
+      vertical-align: middle;
+    }
+    
+    figure {
+      display: block;
+      text-align: center;
+      margin: 1em 0;
+    }
+    
+    figure img {
+      border: none;
+      margin: 0 auto;
+    }
+    
+    figcaption {
+      font-size: 0.8em;
+      font-style: italic;
+      margin: 0 0 .8em;
+    }
+    
+    table {
+      margin-bottom: 2em;
+      border-bottom: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+    
+    table th {
+      padding: .2em 1em;
+      background-color: #eee;
+      border-top: 1px solid #ddd;
+      border-left: 1px solid #ddd;
+    }
+    
+    table td {
+      padding: .2em 1em;
+      border-top: 1px solid #ddd;
+      border-left: 1px solid #ddd;
+      vertical-align: top;
+    }
+    
+    .author {
+      font-size: 1.2em;
+      text-align: center;
+    }
+    
+    @media only screen and (min-width: 480px) {
+      body {
+        font-size: 14px;
+      }
+    }
+    @media only screen and (min-width: 768px) {
+      body {
+        font-size: 16px;
+      }
+    }
+    @media print {
+      * {
+        background: transparent !important;
+        color: black !important;
+        filter: none !important;
+        -ms-filter: none !important;
+      }
+    
+      body {
+        font-size: 12pt;
+        max-width: 100%;
+      }
+    
+      a, a:visited {
+        text-decoration: underline;
+      }
+    
+      hr {
+        height: 1px;
+        border: 0;
+        border-bottom: 1px solid black;
+      }
+    
+      a[href]:after {
+        content: " (" attr(href) ")";
+      }
+    
+      abbr[title]:after {
+        content: " (" attr(title) ")";
+      }
+    
+      .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+        content: "";
+      }
+    
+      pre, blockquote {
+        border: 1px solid #999;
+        padding-right: 1em;
+        page-break-inside: avoid;
+      }
+    
+      tr, img {
+        page-break-inside: avoid;
+      }
+    
+      img {
+        max-width: 100% !important;
+      }
+    
+      @page :left {
+        margin: 15mm 20mm 15mm 10mm;
+    }
+    
+      @page :right {
+        margin: 15mm 10mm 15mm 20mm;
+    }
+    
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+    
+      h2, h3 {
+        page-break-after: avoid;
+      }
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Semantic Science: Publication Beyond the PDF - An
+Example Scientific Article Written in Markdown</h1>
+</header>
+<h1 id="semantic-science-publication-beyond-the-pdf">Semantic Science:
+Publication Beyond the PDF</h1>
+<h2 id="an-example-scientific-article-written-in-markdown">An Example
+Scientific Article Written in Markdown</h2>
+<p>Tyler Thomas Procko</p>
+<p>Department of Electrical Engineering and Computer Science</p>
+<p>Embry-Riddle Aeronautical University</p>
+<p>Daytona Beach, FL, USA</p>
+<p><a href="prockot@my.erau.edu">prockot@my.erau.edu</a></p>
+<p><strong><em>Abstract</em>-The present article is an example
+pseudo-scientific paper written in Markdown. It contains all elements
+typically encountered in scientific articles: headed sections, figures,
+tables, lists, references, etc. The purpose here is to demonstrate the
+simplicity in writing scientific articles in Markdown for rapid
+dissemination as pre-prints, before seeking publication in traditional
+outlets.</strong></p>
+<p><strong><em>Keywords</em>-scientific writing, markdown</strong></p>
+<h3 id="i.-introduction">I. Introduction</h3>
+<p>The present article is a demonstration of a minimal protocol proposed
+in a published paper, <em>Semantic Science: Publication Beyond the
+PDF</em>, presented at IEEE SoutheastCon 2024. It can be viewed in its
+Markdown source, Pandoc-converted HTML (annotated with RDFa using
+GPT-4), or Pandoc-converted PDF.</p>
+<p>Because the present article is written in Markdown, one can embed
+links to citation sources as regular hyperlinks. Here is the proposal of
+Timothy Berners-Lee which started the World Wide Web <a
+href="https://cds.cern.ch/record/369245/files/dd-89-001.pdf">[1]</a>.
+While this citation is hosted as a PDF by CERN, many scientific articles
+are paywalled and inacessible. If all papers existed first as agnostic
+pre-prints (such as this one), explicit linking to all cited sources
+would be possible, allowing researchers to more quickly access content
+to integrate with their own work.</p>
+<h3 id="ii.-method">II. Method</h3>
+<p>This article is written in Pandoc-style Markdown, so some more
+esoteric elements, such as insertions and highlights in MultiMarkdown,
+are not demonstrated.</p>
+<h4 id="a.-demonstration-of-paper-elements">a. Demonstration of Paper
+Elements</h4>
+<p>Writing paragraphs in Markdown is done normally. One can also
+<em>italicize</em> text and <strong>bolden</strong> text.</p>
+<h5 id="lists">1. Lists</h5>
+<p>Inserting lists, nested to arbitrary depth, is easy with
+Markdown:</p>
+<ul>
+<li>Semantic Web</li>
+<li>Linked Data</li>
+<li>FAIR Data
+<ul>
+<li>Ontologies</li>
+<li>Knowledge Graphs</li>
+<li>Provenance
+<ul>
+<li>Metadata</li>
+<li>Etc.</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>The same can be done for numbered lists:</p>
+<ol type="1">
+<li>Aristotle</li>
+<li>Niccolo Macchiavelli</li>
+<li>Arthur Schopenhauer</li>
+</ol>
+<h5 id="tables">2. Tables</h5>
+<table>
+<thead>
+<tr class="header">
+<th>Format</th>
+<th>Inception</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>PDF</td>
+<td>1992</td>
+</tr>
+<tr class="even">
+<td>DOCX</td>
+<td>2007</td>
+</tr>
+<tr class="odd">
+<td>TEX</td>
+<td>1984</td>
+</tr>
+<tr class="even">
+<td>HTML</td>
+<td>1993</td>
+</tr>
+<tr class="odd">
+<td>MD</td>
+<td>2004</td>
+</tr>
+</tbody>
+</table>
+<h5 id="figures">3. Figures</h5>
+<p>Figures can be inserted by referencing them with respect to the
+Markdown file.</p>
+<p><img src="media/sw_layercake.png" /></p>
+<h5 id="other">4. Other</h5>
+<p>Math equations can also be inserted in Markdown, either inline or as
+a block, like below: <span
+class="math display"><em>y</em> = <em>m</em><em>x</em> + <em>b</em></span></p>
+<p>Code blocks can be inserted:</p>
+<p><code>public static void main(String args[]){ }</code></p>
+<h3 id="iii.-conclusion">III. Conclusion</h3>
+<p>As can be seen, for the rapid dissemination of early pre-prints,
+basic Markdown and Pandoc are very effective at drafting simple
+scientific manuscripts prior to the seeking of formatted publication
+outlets. To take what is presented here to its extreme, e.g., with more
+complex Markdown elements, automatic reference management,
+collaboration, formatting for outlets, exporting to different filetypes,
+and so on, please refer to the published paper corresponding to this
+simple example, which is published: <em>Semantic Science: Publication
+Beyond the PDF</em>, presented at IEEE SoutheastCon 2024.</p>
+<h3 id="references">References</h3>
+<p>[1] T. Berners-Lee, “Information Management: A Proposal,” CERN,
+1989.</p>
+</body>
+</html>
