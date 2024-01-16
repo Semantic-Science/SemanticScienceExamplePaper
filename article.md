@@ -70,11 +70,8 @@ Code blocks can be inserted:
 
 ```public static void main(String args[]){ }```
 
-#### b. Formatting and Styling
-xxx
-
 ### III. Conclusion
-xxx
+As can be seen, for the rapid dissemination of early pre-prints, basic Markdown and Pandoc are very effective at drafting simple scientific manuscripts prior to the seeking of formatted publication outlets. To take what is presented here to its extreme, e.g., with more complex Markdown elements, automatic reference management, collaboration, formatting for outlets, exporting to different filetypes, and so on, please refer to the published paper corresponding to this simple example, which is published: *Semantic Science: Publication Beyond the PDF*, presented at IEEE SoutheastCon 2024.
 
 ### References
 [1] T. Berners-Lee, "Information Management: A Proposal," CERN, 1989. 
